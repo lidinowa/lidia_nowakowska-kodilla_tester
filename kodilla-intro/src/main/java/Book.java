@@ -32,8 +32,8 @@ public class Book {
 //        return null;
 //    }
 //    public static void main(String[] args) {
-//        Book book = Book.of("test", "hihi");
+//        Book book = Book.of("A", "B");
 //
-//    //    Book.of("lila", "ksionszka");
+//    //    Book.of("Test", "Test2");
 //    }
 //}
