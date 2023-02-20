@@ -1,10 +1,12 @@
 public class User {
     String name;
     int age;
-    public User (String name, int age){
+
+    public User(String name, int age) {
         this.name = name;
         this.age = age;
     }
+
     public static void main(String[] args) {
         User ola = new User("Ola", 10);
         User ula = new User("Ula", 20);
@@ -17,11 +19,11 @@ public class User {
         for (int i = 0; i < user.length; i++) {
             sumOfAge += user[i].age;
         }
-        int averageAge = sumOfAge/user.length;
+        int averageAge = sumOfAge / user.length;
         System.out.println("Average age is " + averageAge);
 
-        for (int i = 0; i < user.length; i++){
-            if (user[i].age > averageAge){
+        for (int i = 0; i < user.length; i++) {
+            if (user[i].age > averageAge) {
                 System.out.println("User who is older than average age is: " + user[i].name + " is " + user[i].age + " years old");
             }
         }
