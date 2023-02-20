@@ -10,12 +10,15 @@ public class Grades {
         grades.lastGrade();
         grades.averageGrade();
     }
-    private int[] grades; // 1) czemu private przed int, w klasie notebook zmienne były deklarowane bez private
+
+    private int[] grades;
     private int size;
-    public Grades(){
+
+    public Grades() {
         this.grades = new int[10];
         this.size = 0;
     }
+
     public void add(int value) {
         if (this.size == 10) {
             return;
@@ -23,17 +26,19 @@ public class Grades {
         this.grades[this.size] = value;
         this.size++;
     }
-    public void lastGrade(){
+
+    public void lastGrade() {
         int lastGrade = grades[this.size - 1];
         System.out.println("The last grade added is " + lastGrade);
     }
-    public void averageGrade(){
+
+    public void averageGrade() {
         int numberOfGrades = this.size;
         int total = 0;
         for (int i = 0; i <= numberOfGrades; i++) {
             total += this.grades[i];
         }
-        int averageGrade = total/this.size;
+        int averageGrade = total / this.size;
         System.out.println("The average grade is " + averageGrade);
     }
 }
