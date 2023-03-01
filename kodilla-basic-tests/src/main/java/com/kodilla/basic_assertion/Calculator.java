@@ -11,7 +11,7 @@ public class Calculator {
     }
 
     public int toSquare(int a) {
-        return a * a;
+        return (int) Math.pow(a, 2);
     }
 
     public double subtractForDouble(double a, double b) {
@@ -19,6 +19,7 @@ public class Calculator {
     }
 
     public double toSquareForDouble(double a) {
-        return a * a;
+
+        return Math.pow(a, 2);
     }
 }
