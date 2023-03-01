@@ -1,20 +1,20 @@
-public class Book {
+public class Books {
     private String author;
     private String title;
 
-    public Book(String author, String title) {
+    public Books(String author, String title) {
         this.author = author;
         this.title = title;
     }
 
-    public static Book of(String author, String title) {
-        Book book = new Book(author, title);
+    public static Books of(String author, String title) {
+        Books books = new Books(author, title);
         System.out.println("Author of the book is: " + author + "and the title is: " + title);
-        return book;
+        return books;
     }
 
     public static void main(String[] args) {
-        Book.of("Isaac Asimov", "The Galaxy");
+        Books.of("Isaac Asimov", "The Galaxy");
     }
 }
 
