@@ -10,9 +10,7 @@ public class ApplicationJob {
         Person person1 = new Person("Joel", 40, taxiDriver);
         Person person2 = new Person("Jane", 35, teacher);
 
-
         person1.displayResponsibilities();
         person2.displayResponsibilities();
-
     }
 }

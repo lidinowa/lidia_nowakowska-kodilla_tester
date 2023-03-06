@@ -20,6 +20,5 @@ public class Rectangle extends Shape {
     public void getPerimeter() {
         int perimeter = 2 * a + 2 * b;
         System.out.println("Perimeter of rectangle is " + perimeter);
-
     }
 }
