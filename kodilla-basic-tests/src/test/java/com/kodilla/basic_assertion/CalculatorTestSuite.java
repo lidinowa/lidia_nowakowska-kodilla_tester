@@ -1,39 +1,48 @@
 package com.kodilla.basic_assertion;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTestSuite {
 
+    Calculator calculator;
+    int a, b;
+    double c, d,  e, f, g;
+
+    @BeforeEach // lub @BeforeAll
+    public void setUp() {
+        calculator = new Calculator();
+        a = 5;
+        b = 8;
+        c = 5.8;
+        d = 5.6;
+        e = 5.1;
+        f = -1.2;
+        g = 0;
+    }
+
     @Test
     public void testSum() {
-        Calculator calculator = new Calculator();
-        int a = 5;
-        int b = 8;
         int sumResult = calculator.sum(a, b);
         assertEquals(13, sumResult);
         System.out.println("Sum is " + sumResult);
     }
+
     @Test
     public void testSubstract(){
-        Calculator calculator2 = new Calculator();
-        double a = 5.8;
-        double b = 5.6;
-        double substractResult = calculator2.subtractForDouble(a,b);
+        double substractResult = calculator.subtract(c,d);
         Assertions.assertEquals(0.2,substractResult,0.1);
         System.out.println("Substract result is: " + substractResult);
     }
+
     @Test
     public void testToSquare(){
-        Calculator calculator3 = new Calculator();
-        double a = 5.1;
-        double b = -1.2;
-        double c = 0;
-        double toSquareResultPositiveValue = calculator3.toSquareForDouble(a);
-        double toSquareResultNegativeValue = calculator3.toSquareForDouble(b);
-        double toSquareResultZeroValue = calculator3.toSquareForDouble(c);
+        double toSquareResultPositiveValue = calculator.toSquare(e);
+        double toSquareResultNegativeValue = calculator.toSquare(f);
+        double toSquareResultZeroValue = calculator.toSquare(g);
         System.out.println("Result for calculation positive value to square is " + toSquareResultPositiveValue);
         System.out.println("Result for calculation negative value to square is " + toSquareResultNegativeValue);
         System.out.println("Result for calculation zero value to square is " + toSquareResultZeroValue);
