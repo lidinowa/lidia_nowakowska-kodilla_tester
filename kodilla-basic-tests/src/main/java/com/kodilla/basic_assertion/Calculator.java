@@ -14,12 +14,11 @@ public class Calculator {
         return (int) Math.pow(a, 2);
     }
 
-    public double subtractForDouble(double a, double b) {
+    public double subtract(double a, double b) {    //przeciążenie metody testSubstract
         return a - b;
     }
 
-    public double toSquareForDouble(double a) {
-
+    public double toSquare(double a) {
         return Math.pow(a, 2);
     }
 }
