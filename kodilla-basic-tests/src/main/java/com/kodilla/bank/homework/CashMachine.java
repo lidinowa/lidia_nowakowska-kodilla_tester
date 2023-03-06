@@ -124,25 +124,4 @@ public class CashMachine {
     public void setSize(int size) {
         this.size = size;
     }
-
-//    public static void main(String[] args) {
-//        CashMachine cashMachine = new CashMachine();
-//        cashMachine.addOrTakeOut(-2);
-//        System.out.println(cashMachine.getBankAccountGivenAmount(0));
-//
-//        cashMachine.addOrTakeOut(50);
-//        cashMachine.addOrTakeOut(60);
-//        cashMachine.addOrTakeOut(-10);
-//        cashMachine.addOrTakeOut(-11);
-//
-//        System.out.println(cashMachine.checkNumberOfCashWithdrawal());
-//        System.out.println(cashMachine.checkNumberOfPaymentsOnAccount());
-//        System.out.println(cashMachine.checkAveragePaymentOnAccount());
-//        System.out.println(cashMachine.checkAverageCashWithdrawal());
-//        System.out.println(cashMachine.checkSumOfCashWithdrawal());
-//        System.out.println(cashMachine.checkSumOfPaymentsOnAccount());
-//
-//
-//    }
-
 }

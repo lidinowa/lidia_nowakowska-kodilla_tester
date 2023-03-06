@@ -1,15 +1,22 @@
 package com.kodilla.bank.homework;
 
 import com.kodilla.school.Grades;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CashMachineTestSuite {
 
+    private CashMachine cashMachine;
+
+    @BeforeEach
+    public void setUp(){
+        cashMachine = new CashMachine();
+    }
+
     @Test
     public void shouldHaveZeroLengthWhenNoTransactions() {
-        CashMachine cashMachine = new CashMachine();
       //  int[] bankAccount = cashMachine.getBankAccount();  // dwa poprawne sposoby?
       //  assertEquals(0,bankAccount.length);
         assertEquals(0,cashMachine.getBankAccount().length);
@@ -17,7 +24,6 @@ public class CashMachineTestSuite {
 
     @Test
     public void shouldMakeThreeOperations(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addOrTakeOut(100);
         cashMachine.addOrTakeOut(2500);
         cashMachine.addOrTakeOut(-1000);
@@ -29,7 +35,6 @@ public class CashMachineTestSuite {
 
     @Test
     public void checkAccountBalanceWithTransactionsAdded(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addOrTakeOut(25);
         cashMachine.addOrTakeOut(50);
         cashMachine.addOrTakeOut(-10);
@@ -38,13 +43,11 @@ public class CashMachineTestSuite {
 
     @Test
     public void checkAccountBalanceWithNoTransactionsAdded(){
-        CashMachine cashMachine = new CashMachine();
         assertEquals(0,cashMachine.checkAccountBalance());
     }
 
     @Test
     public void checkNumberOfTransactions(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addOrTakeOut(25);
         cashMachine.addOrTakeOut(50);
         cashMachine.addOrTakeOut(-10);
@@ -53,13 +56,11 @@ public class CashMachineTestSuite {
 
     @Test
     public void checkNumberOfTransactionsWhenNothingAdded(){
-        CashMachine cashMachine = new CashMachine();
         assertEquals(0,cashMachine.checkNumberOfTransactions());
     }
 
     @Test
     public void checkHowManyCashWithdrawal(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addOrTakeOut(25);
         cashMachine.addOrTakeOut(-50);
         cashMachine.addOrTakeOut(-10);
@@ -68,7 +69,6 @@ public class CashMachineTestSuite {
 
     @Test
     public void checkHowManyCashWithdrawalWhenShouldBeZero(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addOrTakeOut(25);
         cashMachine.addOrTakeOut(50);
         cashMachine.addOrTakeOut(10);
@@ -77,7 +77,6 @@ public class CashMachineTestSuite {
 
     @Test
     public void checkHowManyPaymentsOnAccount(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addOrTakeOut(25);
         cashMachine.addOrTakeOut(50);
         cashMachine.addOrTakeOut(-10);
@@ -86,11 +85,9 @@ public class CashMachineTestSuite {
 
     @Test
     public void checkHowManyPaymentsOnAccountWhenShouldBeZero(){
-        CashMachine cashMachine = new CashMachine();
         cashMachine.addOrTakeOut(-25);
         cashMachine.addOrTakeOut(-50);
         cashMachine.addOrTakeOut(-10);
         assertEquals(0,cashMachine.checkNumberOfPaymentsOnAccount());
     }
-
 }

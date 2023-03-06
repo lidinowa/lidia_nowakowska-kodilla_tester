@@ -9,6 +9,8 @@ public class Bank {
         this.size = 0;
     }
 
+    // wpłacanie lub wypłacanie środków
+
     public void addCashMachine(CashMachine cashMachine) {
         this.size++;
         CashMachine[] newTab = new CashMachine[this.size];
@@ -69,6 +71,9 @@ public class Bank {
     public int checkAveragePaymentOnAccount(){
         int sum = 0;
         int howManyIndexPlaces = tableAllCashMachines.length - 1;
+        if (this.tableAllCashMachines.length == 0){
+            return 0;
+        }
         for (int i = 0; i <= howManyIndexPlaces; i++){
             sum += tableAllCashMachines[i].checkSumOfPaymentsOnAccount();
         }
@@ -76,17 +81,23 @@ public class Bank {
     }
 
 
-    //metoda poniżej nie działa, średnia wpłat
+    //inny sposób uzyskania średniej:
 
     public int checkAveragePaymentOnAccount2(){
         int sum = 0;
+        int count = 0;
         int howManyIndexPlaces = tableAllCashMachines.length - 1;
         for (int i = 0; i <= howManyIndexPlaces; i++){
-            sum += tableAllCashMachines[i].checkAveragePaymentOnAccount();
+            if (tableAllCashMachines[i].checkAveragePaymentOnAccount() > 0) {
+                sum += tableAllCashMachines[i].checkAveragePaymentOnAccount();
+                count++;
+            }
         }
-        return sum;
+        return sum/count;
     }
 
+    // próba pętli w pętli
+//
 //    public int checkAllCashWithdrawal(){
 //        int sum = 0;
 //        int count = 0;
@@ -121,25 +132,4 @@ public class Bank {
     public void setSize(int size) {
         this.size = size;
     }
-
-    public static void main(String[] args) {
-        Bank bank = new Bank();
-        CashMachine cashMachine = new CashMachine();
-        CashMachine cashMachine1 = new CashMachine();
-        bank.addCashMachine(cashMachine);
-        bank.addCashMachine(cashMachine1);
-
-      //  cashMachine.addOrTakeOut(10);
-     //   cashMachine.addOrTakeOut(-10);
-      //  cashMachine1.addOrTakeOut(20);
-      //  cashMachine1.addOrTakeOut(-20);
-        System.out.println(bank.checkAllCashMachinesBalance());
-        System.out.println(bank.checkAllBankCashWithdrawal());
-        System.out.println(bank.checkAllBankPaymentsOnAccounts());
-        System.out.println(bank.checkAverageCashWithdrawal());
-        System.out.println(bank.checkAveragePaymentOnAccount());
-
-    }
-
-
 }
