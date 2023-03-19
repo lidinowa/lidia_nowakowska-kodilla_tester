@@ -7,7 +7,7 @@ public class School {
     private List<String> students = new ArrayList<>();
     private String schoolName;
 
-    public School(List<String> students, String scholName){
+    public School(List<String> students, String scholName) {
         this.students = students;
         this.schoolName = scholName;
     }
@@ -19,7 +19,7 @@ public class School {
                 '}';
     }
 
-    public int numberOfStudents(){
+    public int numberOfStudents() {
         return students.size();
     }
 
