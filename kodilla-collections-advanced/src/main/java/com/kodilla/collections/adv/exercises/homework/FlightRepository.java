@@ -5,11 +5,11 @@ import java.util.List;
 
 public class FlightRepository {
     public static List<Flight> getFlightsTable(){
-        List<Flight> listaLotów = new ArrayList<>();
-        listaLotów.add(new Flight("Warsaw", "Faro"));
-        listaLotów.add(new Flight("Warsaw", "Dublin"));
-        listaLotów.add(new Flight("Berlin", "Bangkok"));
-        listaLotów.add(new Flight("Katowice", "Vienna"));
-    return listaLotów;
+        List<Flight> flightList = new ArrayList<>();
+        flightList.add(new Flight("Warsaw", "Faro"));
+        flightList.add(new Flight("Warsaw", "Dublin"));
+        flightList.add(new Flight("Berlin", "Bangkok"));
+        flightList.add(new Flight("Katowice", "Vienna"));
+    return flightList;
     }
 }

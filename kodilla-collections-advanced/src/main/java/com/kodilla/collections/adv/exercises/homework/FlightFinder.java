@@ -5,25 +5,25 @@ import java.util.List;
 
 public class FlightFinder {
 
-    List<Flight> listaLotów = FlightRepository.getFlightsTable();
+    List<Flight> flightList = FlightRepository.getFlightsTable();
 
     public List<Flight> findFlightsFrom(String departure) {
-        List<Flight> lotyZWybranegoMiasta = new ArrayList<>();
-        for (Flight iterowanyLot : listaLotów) {
-            if (iterowanyLot.getDeparture().equals(departure)) {
-                lotyZWybranegoMiasta.add(iterowanyLot);
+        List<Flight> flightFromSelectedAirport = new ArrayList<>();
+        for (Flight givenFlight : flightList) {
+            if (givenFlight.getDeparture().equals(departure)) {
+                flightFromSelectedAirport.add(givenFlight);
             }
         }
-        return lotyZWybranegoMiasta;
+        return flightFromSelectedAirport;
     }
 
     public List<Flight> findFlightsTo(String arrival) {
-        List<Flight> lotyDoWybranegoMiasta = new ArrayList<>();
-        for (Flight iterowanyLot : listaLotów) {
-            if (iterowanyLot.getArrival().equals(arrival)) {
-                lotyDoWybranegoMiasta.add(iterowanyLot);
+        List<Flight> flightToSelectedAirport = new ArrayList<>();
+        for (Flight givenFlight : flightList) {
+            if (givenFlight.getArrival().equals(arrival)) {
+                flightToSelectedAirport.add(givenFlight);
             }
         }
-        return lotyDoWybranegoMiasta;
+        return flightToSelectedAirport;
     }
 }
