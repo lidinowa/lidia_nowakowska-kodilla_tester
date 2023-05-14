@@ -18,7 +18,7 @@ class AlertServiceTestSuite {
 
 
     @BeforeEach
-            public void setUp(){
+    public void setUp() {
         alertService = new AlertService();
         warsaw = Mockito.mock(Location.class);
         gdansk = Mockito.mock(Location.class);
