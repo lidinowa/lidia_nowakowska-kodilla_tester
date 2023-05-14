@@ -1,18 +1,33 @@
 package com.kodilla.mockito.homework;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-class AlertServiceTestSuite {
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-    AlertService alertService = new AlertService();
-    Location warsaw = Mockito.mock(Location.class);
-    Location gdansk = Mockito.mock(Location.class);
-    Location wroclaw = Mockito.mock(Location.class);
-    User user1 = Mockito.mock(User.class);
-    User user2 = Mockito.mock(User.class);
-    User user3 = Mockito.mock(User.class);
-    Notification testNotification = Mockito.mock(Notification.class);
+class AlertServiceTestSuite {
+    AlertService alertService;
+    Location warsaw;
+    Location gdansk;
+    Location wroclaw;
+    User user1;
+    User user2;
+    User user3;
+    Notification testNotification;
+
+
+    @BeforeEach
+            public void setUp(){
+        alertService = new AlertService();
+        warsaw = Mockito.mock(Location.class);
+        gdansk = Mockito.mock(Location.class);
+        wroclaw = Mockito.mock(Location.class);
+        user1 = Mockito.mock(User.class);
+        user2 = Mockito.mock(User.class);
+        user3 = Mockito.mock(User.class);
+        testNotification = Mockito.mock(Notification.class);
+    }
 
     @Test
     public void shouldSignForALocationAndReceiveNotification() {
@@ -38,11 +53,20 @@ class AlertServiceTestSuite {
         alertService.sendNotificationRelatedToGivenLocation(gdansk);
 
         Mockito.verify(user1, Mockito.times(0)).receiveLocationNotification(gdansk);
+    }
 
+    //próba z asercją
+//    @Test
+//    public void shouldCancelSubscriptionForUserFromGivenLocation2() {
+//        alertService.addUserToSubscriptionToGivenLocation(user1, gdansk);
+//        alertService.addUserToSubscriptionToGivenLocation(user1, warsaw);
+//
 //        int indexOfLocationToBeDeleted = alertService.dataBaseWithAllSubscribers.get(user1).indexOf(gdansk);
+//        alertService.cancelSubscriptionFromGivenLocation(user1, gdansk);
+//
 //        Location locationTest = alertService.dataBaseWithAllSubscribers.get(user1).get(indexOfLocationToBeDeleted);
 //        assertNull(locationTest);
-    }
+//    }
 
     @Test
     public void shouldCancelAllSubscriptions() {
